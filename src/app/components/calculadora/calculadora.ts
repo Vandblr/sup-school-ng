@@ -14,6 +14,7 @@ export class Calculadora {
   //void quer dizer que é uma fução que não tem retorno
   somar(): void {
     let soma: number = this.numero1! + this.numero2!;
-    alert(`Soma: ${soma}`)
+    alert(`Soma: ${soma}`);
   }
 }
+

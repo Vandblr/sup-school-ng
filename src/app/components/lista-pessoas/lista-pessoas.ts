@@ -22,7 +22,7 @@ export class ListaPessoas {
   }
 
   apagar(pessoaParaApagar: string): void {
-    let indicrParaApagar = this.pessoas.indexOf(pessoaParaApagar);
-    this.pessoas.splice(indicrParaApagar, 1);
+    let indicerParaApagar = this.pessoas.indexOf(pessoaParaApagar);
+    this.pessoas.splice(indicerParaApagar, 1);
   }
 }
