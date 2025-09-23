@@ -5,6 +5,8 @@ import { CalculadoraRetangulo } from './components/calculadora-retangulo/calcula
 import { CalculadoraMedia } from './components/calculadora-media/calculadora-media';
 import { CalculadoraTemperatura } from './components/calculadora-temperatura/calculadora-temperatura';
 import { ListaTarefas } from './components/lista-tarefas/lista-tarefas';
+import { ListaAlunos } from './components/lista-alunos/lista-alunos';
+import { CadastroAluno } from './components/cadastro-aluno/cadastro-aluno';
 
 export const routes: Routes = [
     {path: "calculadora", component: Calculadora},
@@ -13,5 +15,7 @@ export const routes: Routes = [
     {path: "calculadora-media", component: CalculadoraMedia},
     {path: "calculadora-temperatura", component: CalculadoraTemperatura},
     {path: "lista-tarefas", component: ListaTarefas},
+    { path: "alunos", component: ListaAlunos },
+    { path: "alunos/cadastro", component: CadastroAluno}
     
 ];
