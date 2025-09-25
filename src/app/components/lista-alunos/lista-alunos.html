@@ -7,7 +7,7 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Nédia</th>
+            <th>Média</th>
             <th>Frequencia</th>
             <th>status</th>
             <th></th>
@@ -20,7 +20,8 @@
                 <th>{{aluno.media.toFixed(2).replace(".", ",")}}</th>
                 <th>{{aluno.frequencia}}</th>
                 <th>{{aluno.status}}</th>
-                <th><button (click)="apagar">apagar</button></th>
+
+                <th><button (click)="apagar(aluno)">apagar</button></th>
             </tr>
         }
     </tbody>

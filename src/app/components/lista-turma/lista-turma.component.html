@@ -1,0 +1,23 @@
+<div class="botao-cadastro">
+    <a routerLink="/cadastros/turmas">Cadastro</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Sigla</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(turma of turmas; track turma) {
+            <tr>
+                <th>{{turma.nome}}</th>
+                <th>{{turma.sigla}}</th>
+
+                <th><button (click)="apagar(turma)">Apagar</button></th>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -7,6 +7,8 @@ import { CalculadoraTemperatura } from './components/calculadora-temperatura/cal
 import { ListaTarefas } from './components/lista-tarefas/lista-tarefas';
 import { ListaAlunos } from './components/lista-alunos/lista-alunos';
 import { CadastroAluno } from './components/cadastro-aluno/cadastro-aluno';
+import { ListaTurma } from './components/lista-turma/lista-turma.component';
+import { CadastroTurma } from './components/cadastro-turma/cadastro-turma.component';
 
 export const routes: Routes = [
     {path: "calculadora", component: Calculadora},
@@ -16,6 +18,8 @@ export const routes: Routes = [
     {path: "calculadora-temperatura", component: CalculadoraTemperatura},
     {path: "lista-tarefas", component: ListaTarefas},
     { path: "alunos", component: ListaAlunos },
-    { path: "alunos/cadastro", component: CadastroAluno}
+    { path: "alunos/cadastro", component: CadastroAluno},
+    {path: "turmas", component: ListaTurma},
+    {path: "turmas/cadastro", component: CadastroTurma}
     
 ];
