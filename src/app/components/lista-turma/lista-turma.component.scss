@@ -1,0 +1,138 @@
+/* ===== Tema Dark Purple - Lista de Turmas / Tabela ===== */
+:host {
+  display: block;
+  background-color: #1a1528; /* roxo bem escuro */
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #e5e5f7;
+}
+
+/* Botão-link de cadastro */
+.botao-cadastro {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.botao-cadastro a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #7c2ae8 0%, #6d28d9 100%);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.12);
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.botao-cadastro a:hover,
+.botao-cadastro a:focus {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  outline: none;
+  box-shadow: 0 8px 22px rgba(147, 51, 234, 0.18);
+}
+
+/* Container responsivo para tabela */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(45,27,78,0.20), rgba(26,21,40,0.18));
+  padding: 0.5rem;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* evita colapso em telas pequenas */
+}
+
+/* Cabeçalho */
+thead th {
+  text-align: left;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+  color: #efeaff;
+  background: rgba(76,29,149,0.12);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.95rem;
+}
+
+/* Células do corpo */
+tbody td,
+tbody th {
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  color: #e8e6ff;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+/* Linhas zebra sutil */
+tbody tr:nth-child(odd) {
+  background: linear-gradient(180deg, rgba(45,27,78,0.02), transparent);
+}
+
+/* Hover na linha */
+tbody tr:hover {
+  background: rgba(147,51,234,0.04);
+  transform: translateZ(0); /* força composição para suavizar hover */
+}
+
+/* Botão apagar */
+tbody button {
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+/* Estilo específico do botão Apagar: variante contrastante */
+tbody button {
+  background: rgba(255, 99, 115, 0.12);
+  color: #ff8a8f;
+  border: 1px solid rgba(255,99,115,0.18);
+  box-shadow: 0 4px 10px rgba(255,99,115,0.02);
+}
+
+tbody button:hover,
+tbody button:focus {
+  background: rgba(255, 99, 115, 0.18);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Ajustes para células de ações (botões) */
+tbody th {
+  text-align: right;
+  width: 160px; /* reserva espaço para o botão */
+}
+
+/* Pequenas melhorias de acessibilidade */
+a:focus,
+button:focus,
+tbody tr:focus-within {
+  box-shadow: 0 0 0 3px rgba(147,51,234,0.12);
+  outline: none;
+}
+
+/* Tornar a tabela mais comprimida em telas pequenas */
+@media (max-width: 640px) {
+  thead th {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.75rem;
+  }
+  tbody td,
+  tbody th {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  tbody th { width: 120px; }
+}

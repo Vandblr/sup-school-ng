@@ -36,7 +36,7 @@ export class ListaTurma {
 
   salvarLocalStorage(): void {
     let turmasString = JSON.stringify(this.turmas);
-    localStorage.setItem("alunos",turmasString)
+    localStorage.setItem("turmas",turmasString)
   }
   
 }

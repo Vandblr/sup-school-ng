@@ -9,6 +9,8 @@ import { ListaAlunos } from './components/lista-alunos/lista-alunos';
 import { CadastroAluno } from './components/cadastro-aluno/cadastro-aluno';
 import { ListaTurma } from './components/lista-turma/lista-turma.component';
 import { CadastroTurma } from './components/cadastro-turma/cadastro-turma.component';
+import { CadastroMateria } from './components/cadastro-materia/cadastro-materia';
+import { ListaMaterias } from './components/lista-materias/lista-materias';
 
 export const routes: Routes = [
     {path: "calculadora", component: Calculadora},
@@ -20,6 +22,9 @@ export const routes: Routes = [
     { path: "alunos", component: ListaAlunos },
     { path: "alunos/cadastro", component: CadastroAluno},
     {path: "turmas", component: ListaTurma},
-    {path: "turmas/cadastro", component: CadastroTurma}
+    {path: "turmas/cadastro", component: CadastroTurma},
+    {path: "materia/cadastro", component: CadastroMateria},
+    {path: "materia", component: ListaMaterias}
+    
     
 ];
