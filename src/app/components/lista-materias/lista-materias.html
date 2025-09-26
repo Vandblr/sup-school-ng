@@ -1,1 +1,21 @@
-<p>lista-materias works!</p>
+<div class="botao-cadastro">
+    <a routerLink="/materia/cadastro">Cadastro</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @for(materia of materias; track materia) {
+            <tr>
+                <th>{{materia.nome}}</th>
+
+                <th><button (click)="apagar(materia)">apagar</button></th>
+            </tr>
+        }
+    </tbody> 
+</table>

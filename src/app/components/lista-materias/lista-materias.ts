@@ -11,7 +11,7 @@ interface Materia{
   templateUrl: './lista-materias.html',
   styleUrl: './lista-materias.scss'
 })
-export class ListaMaterias {
+export class ListaMateria {
 
 
   materias: Materia[];
@@ -32,7 +32,7 @@ export class ListaMaterias {
 
   apagar(materia: Materia): void {
     let indiceParaApagar = this.materias.indexOf(materia);
-    this.materias.splice(indiceParaApagar,1);
+    this.materias.splice(indiceParaApagar, 1);
   }
 
   salvarLocalStorage(): void {
