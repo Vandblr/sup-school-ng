@@ -14,19 +14,20 @@ import { ListaMateria } from './components/lista-materias/lista-materias';
 import { CadastroProfessor } from './components/cadastro-professor/cadastro-professor';
 
 export const routes: Routes = [
-    {path: "calculadora", component: Calculadora},
-    {path: "lista-pessoas", component: ListaPessoas},
-    {path: "calculadora-retangulo", component: CalculadoraRetangulo},
-    {path: "calculadora-media", component: CalculadoraMedia},
-    {path: "calculadora-temperatura", component: CalculadoraTemperatura},
-    {path: "lista-tarefas", component: ListaTarefas},
+    { path: "calculadora", component: Calculadora },
+    { path: "lista-pessoas", component: ListaPessoas },
+    { path: "calculadora-retangulo", component: CalculadoraRetangulo },
+    { path: "calculadora-media", component: CalculadoraMedia },
+    { path: "calculadora-temperatura", component: CalculadoraTemperatura },
+    { path: "lista-tarefas", component: ListaTarefas },
     { path: "alunos", component: ListaAlunos },
-    { path: "alunos/cadastro", component: CadastroAluno},
-    {path: "turmas", component: ListaTurma},
-    {path: "turmas/cadastro", component: CadastroTurma},
-    {path: "materia/cadastro", component: CadastroMateria},
-    {path: "materia", component: ListaMateria},
-    {path: "professor/cadastro", component: CadastroProfessor},
-    
-    
+    { path: "alunos/cadastro", component: CadastroAluno },
+    { path: "turmas", component: ListaTurma },
+    { path: "turmas/cadastro", component: CadastroTurma },
+    { path: "materia/cadastro", component: CadastroMateria },
+    { path: "materia", component: ListaMateria },
+    { path: "professor/cadastro", component: CadastroProfessor },
+    { path: "alunos/editar/:id", component: CadastroAluno }
+
+
 ];

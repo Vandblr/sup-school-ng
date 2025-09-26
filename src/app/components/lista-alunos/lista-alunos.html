@@ -21,7 +21,10 @@
                 <th>{{aluno.frequencia}}</th>
                 <th>{{aluno.status}}</th>
 
-                <th><button (click)="apagar(aluno)">apagar</button></th>
+                <th>
+                <button (click)="editar(aluno)">editar</button>
+                <button (click)="apagar(aluno)">apagar</button>
+            </th>
             </tr>
         }
     </tbody>

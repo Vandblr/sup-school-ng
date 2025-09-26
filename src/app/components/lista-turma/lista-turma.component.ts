@@ -13,7 +13,7 @@ interface Turma {
 })
 export class ListaTurma {
 
-  turmas: Turma[];
+  turmas: Turma[];  
 
   constructor() {
     this.turmas = this.carregarTurmasLocalStorage();

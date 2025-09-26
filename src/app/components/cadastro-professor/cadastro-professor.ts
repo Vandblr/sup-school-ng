@@ -35,24 +35,6 @@ export class CadastroProfessor {
     this.professores = this.carregarProfessoresLocalStorage();
   }
 
-  salvar(): void {
-    let valorHora = this.calcularValorHora();
-
-    let professor: Professor = {
-      nome: this.nome,
-      cpf: this.cpf,
-      dataDeNascimento: this.dataDeNascimento!,
-      cnpj: this.cnpj!,
-      chavePix: this.chavePix,
-      nomeFantasia: this.nomeFantasia!,
-      valorHora: valorHora,
-      celular: this.celular!,
-    };
-
-    this.professores.push(professor);
-    this.salvarLocalStorage();
-    this.router.navigate(['/professores']);
-  }
 
   salvarLocalStorage(): void {
     let professoresString = JSON.stringify(this.professores);
