@@ -16,7 +16,10 @@
                 <th>{{turma.nome}}</th>
                 <th>{{turma.sigla}}</th>
 
-                <th><button (click)="apagar(turma)">Apagar</button></th>
+                <th>
+                    <button (click)="editar(turma)">Apagar</button>
+                    <button (click)="apagar(turma)">Apagar</button>
+                </th>
             </tr>
         }
     </tbody> 
