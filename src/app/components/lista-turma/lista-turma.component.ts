@@ -2,30 +2,29 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
-
 interface Turma {
- nome: string;
- sigla: string;
+  id: string;
+  nome: string;
+  sigla: string;
 }
 
 @Component({
   selector: 'app-lista-turma',
   imports: [RouterLink],
   templateUrl: './lista-turma.component.html',
-  styleUrl: './lista-turma.component.scss'
+  styleUrl: './lista-turma.component.scss',
 })
 export class ListaTurma {
-
-  turmas: Turma[];  
+  turmas: Turma[];
 
   constructor(private router: Router) {
     this.turmas = this.carregarTurmasLocalStorage();
   }
 
   carregarTurmasLocalStorage(): Turma[] {
-    let turmasDoLocalStorage =  localStorage.getItem("turmas")
-    if (turmasDoLocalStorage === null){
-      return[];
+    let turmasDoLocalStorage = localStorage.getItem('turmas');
+    if (turmasDoLocalStorage === null) {
+      return [];
     }
     let turmas: Turma[] = JSON.parse(turmasDoLocalStorage);
     return turmas;
@@ -37,13 +36,12 @@ export class ListaTurma {
     this.salvarLocalStorage();
   }
 
-editar(turma: Turma): void {
-  this.router.navigate([`/turmas/editar`])
-}
+  editar(turma: Turma): void {
+    this.router.navigate([`/turmas/editar/${turma.id}`]);
+  }
 
   salvarLocalStorage(): void {
     let turmasString = JSON.stringify(this.turmas);
-    localStorage.setItem("turmas",turmasString)
+    localStorage.setItem('turmas', turmasString);
   }
-  
 }

@@ -24,10 +24,13 @@ export const routes: Routes = [
     { path: "alunos/cadastro/:id", component: CadastroAluno },
     { path: "turmas", component: ListaTurma },
     { path: "turmas/cadastro", component: CadastroTurma },
-    { path: "materia/cadastro", component: CadastroMateria },
-    { path: "materia", component: ListaMateria },
+    { path: "materia/cadastro/", component: CadastroMateria },
+    { path: "materias/editar/:id", component: CadastroMateria},
+    { path: "lista/materia", component: ListaMateria },
     { path: "professor/cadastro", component: CadastroProfessor },
-    { path: "alunos/editar/:id", component: CadastroAluno }
+    { path: "alunos/editar/:id", component: CadastroAluno },
+    
 
 
 ];
+

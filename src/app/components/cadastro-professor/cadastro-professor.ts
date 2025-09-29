@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
 interface Professor {
+  id: string;
   nome: string;
   cpf: string;
   dataDeNascimento: string;
@@ -21,15 +22,6 @@ interface Professor {
 })
 export class CadastroProfessor {
   professores: Professor[];
-
-  nome: string = '';
-  cpf: string = '';
-  dataDeNascimento?: string;
-  cnpj?: string;
-  chavePix: string = '';
-  nomeFantasia?: string;
-  valorHora?: number;
-  celular?: string;
 
   constructor(private router: Router) {
     this.professores = this.carregarProfessoresLocalStorage();
@@ -51,5 +43,15 @@ export class CadastroProfessor {
     return professores;
   }
 
+    apagar(professor: Professor): void {
+    let indiceParaApagar = this.professores.indexOf(professor);
+    this.professores.splice(indiceParaApagar, 1);
+    this.salvarLocalStorage();
+  }
+
+
+    editar(professor: Professor): void {
+    this.router.navigate([`/professores/editar/${professor.id}`])
+  }
   
 }

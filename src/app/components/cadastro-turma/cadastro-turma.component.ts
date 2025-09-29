@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router} from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Turma {
   id: string;
@@ -13,22 +12,20 @@ interface Turma {
   selector: 'app-cadastro-turma',
   imports: [FormsModule],
   templateUrl: './cadastro-turma.component.html',
-  styleUrl: './cadastro-turma.component.scss'
+  styleUrl: './cadastro-turma.component.scss',
 })
 export class CadastroTurma {
   //propriedades
   turmas: Turma[];
 
-  nome: string = "";
-  sigla: string = "";
+  nome: string = '';
+  sigla: string = '';
 
   idEditar?: string;
 
-  constructor(private router: Router,
-    private activedRoute: ActivatedRoute,
-  ) {
+  constructor(private router: Router, private activedRoute: ActivatedRoute) {
     this.turmas = this.carregarTurmasLocalStorage();
-    let idParaEditar = this.activedRoute.snapshot.paramMap.get("id");
+    let idParaEditar = this.activedRoute.snapshot.paramMap.get('id');
     if (idParaEditar !== null) {
       this.idEditar = idParaEditar.toString();
 
@@ -37,25 +34,19 @@ export class CadastroTurma {
   }
 
   preencherCaposParaEditar(): void {
-    let turma = this.turmas.filter(turma => turma.id === this.idEditar)[0];
+    let turma = this.turmas.filter((turma) => turma.id === this.idEditar)[0];
     this.nome = turma.nome;
     this.sigla = turma.sigla;
   }
 
-  
-
-  
-
   //metodos
   salvar(): void {
-    
-    this.salvarLocalStorage()
-    this.router.navigate(["/turmas"])
+    this.salvarLocalStorage();
+    this.router.navigate(['/turmas']);
   }
 
-
   editarTurma(nome: string, silga: string): void {
-    let indiceLista = this.turmas.findIndex(aluno => aluno.id === this.idEditar);
+    let indiceLista = this.turmas.findIndex((aluno) => aluno.id === this.idEditar);
     this.turmas[indiceLista].nome = this.nome;
     this.turmas[indiceLista].sigla = this.sigla;
   }
@@ -64,20 +55,19 @@ export class CadastroTurma {
     let turma: Turma = {
       id: crypto.randomUUID(),
       nome: this.nome,
-      sigla: this.sigla
+      sigla: this.sigla,
     };
 
-    this.turmas.push(turma)
+    this.turmas.push(turma);
   }
 
   salvarLocalStorage(): void {
     let turmasStrig = JSON.stringify(this.turmas);
-    localStorage.setItem("turmas", turmasStrig);
+    localStorage.setItem('turmas', turmasStrig);
   }
-  
 
   carregarTurmasLocalStorage(): Turma[] {
-    let turmasDoLocalStorage = localStorage.getItem("turmas");
+    let turmasDoLocalStorage = localStorage.getItem('turmas');
     if (turmasDoLocalStorage === null) {
       return [];
     }
@@ -85,9 +75,4 @@ export class CadastroTurma {
     let turmas: Turma[] = JSON.parse(turmasDoLocalStorage);
     return turmas;
   }
-
-
-
-
-
 }

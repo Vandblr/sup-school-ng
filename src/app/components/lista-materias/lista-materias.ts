@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 interface Materia{
+  id: string;
   nome: string;
 }
 
 @Component({
   selector: 'app-lista-materias',
-  imports: [FormsModule],
+  imports: [RouterLink],
   templateUrl: './lista-materias.html',
   styleUrl: './lista-materias.scss'
 })
@@ -15,8 +16,9 @@ export class ListaMateria {
 
 
   materias: Materia[];
+  
 
-  constructor() {
+  constructor(private router: Router) {
     this.materias = this.carregarMateriasLocalStorage();
   }
 
@@ -30,9 +32,15 @@ export class ListaMateria {
     return materias;
   }
 
+ 
   apagar(materia: Materia): void {
     let indiceParaApagar = this.materias.indexOf(materia);
     this.materias.splice(indiceParaApagar, 1);
+    this.salvarLocalStorage();
+  }
+
+  editar(materia: Materia): void {
+    this.router.navigate([`/materias/editar/${materia.id}`])
   }
 
   salvarLocalStorage(): void {
