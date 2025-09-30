@@ -21,7 +21,7 @@ export const routes: Routes = [
     { path: "calculadora-temperatura", component: CalculadoraTemperatura },
     { path: "lista-tarefas", component: ListaTarefas },
     { path: "alunos", component: ListaAlunos },
-    { path: "alunos/cadastro/:id", component: CadastroAluno },
+    { path: "alunos/cadastro", component: CadastroAluno },
     { path: "turmas", component: ListaTurma },
     { path: "turmas/cadastro", component: CadastroTurma },
     { path: "materia/cadastro/", component: CadastroMateria },

@@ -1,5 +1,6 @@
 <div class="botao-cadastro">
-    <a routerLink="/alunos/cadastro">cadastro</a>
+    <botao routerLink="/alunos/cadastro" texto="Cadastro"></botao>
+    
 </div>
 
 
@@ -16,15 +17,15 @@
     <tbody>
         @for(aluno of alunos; track aluno) {
             <tr>
-                <th>{{aluno.nome}}</th>
-                <th>{{aluno.media.toFixed(2).replace(".", ",")}}</th>
-                <th>{{aluno.frequencia}}</th>
-                <th>{{aluno.status}}</th>
+                <td>{{aluno.nome}}</td>
+                <td>{{aluno.media.toFixed(2).replace(".", ",")}}</td>
+                <td>{{aluno.frequencia}}</td>
+                <td>{{aluno.status}}</td>
+                
+                <botao texto="Editar" (click)="editar(aluno)" tipo="aviso"></botao>
+                <botao texto="apagar" (click)="apagar(aluno)" tipo="perigo"></botao>
+                
 
-                <th>
-                <button (click)="editar(aluno)">editar</button>
-                <button (click)="apagar(aluno)">apagar</button>
-            </th>
             </tr>
         }
     </tbody>
