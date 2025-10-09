@@ -14,7 +14,7 @@ export class AutorService {
 
   getAll(): Observable<AutorResponse[]> {
     return this.httpClient.get<AutorResponse[]>(this.url);
-  }
+}
 
   create(form: AutorCadastroRequest): Observable<void> {
     return this.httpClient.post<void>(this.url, form);

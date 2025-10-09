@@ -1,0 +1,20 @@
+
+<p-table [value]="alunos" [tableStyle]="{ 'min-width': '50rem' }"></p-table>
+<p-button label="Cadastrar" severity="info" icon="pi pi-plus" routerLink="cadastrar" />
+    <ng-template #header>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th></th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-aluno>
+        <tr>
+            <td>{{ aluno.id }}</td>
+            <td>{{ aluno.nome }}</td>
+            <td class="flex gap-2">
+                <!-- Depois será adicionado os botões -->
+            </td>
+        </tr>
+    </ng-template>
+ 
