@@ -19,25 +19,6 @@ import { AlunoService } from '../../../../services/aluno.service';
   styleUrl: './create.scss'
 })
 export class AlunoCreate {
-  form: AlunoCadastroRequest;
 
-  constructor(
-    private alunoService: AlunoService,
-    private router: Router,
-  ){
-    this.form = {
-
-    };
-  }
-
-  salvar() {
-    this.alunoService.create(this.form).subscribe({
-      next: _ => this.router.navigate(["/autores"]),
-      error: erro => {
-        alert("Não foi possível cadastrar a autor");
-        console.error(erro);
-      }
-    })
-  }
 
 }
