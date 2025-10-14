@@ -7,6 +7,9 @@ import { AutorCreate } from './pages/autores/create/create';
 import { AutorEdit } from './pages/autores/edit/edit';
 import { AlunoList } from './pages/alunos/list/list';
 import { AlunoCreate } from './pages/alunos/list/create/create';
+import { usuarioList } from './pages/usuarios/list/list';
+import { UsuarioCreate } from './pages/usuarios/create/create';
+import { EmprestimoList } from './pages/emprestimo/list/list';
 
 export const routes: Routes = [
     {path: "categorias", component: CategoriaList },
@@ -17,6 +20,9 @@ export const routes: Routes = [
     {path: "autores/editar/:id", component: AutorEdit},
     {path: "alunos", component: AlunoList},
     {path: "alunos/cadastrar", component: AlunoCreate},
+    {path: "usuarios", component: usuarioList},
+    {path: "usuarios/cadastrar", component: UsuarioCreate},
+    {path: "emprestimos", component: EmprestimoList}
     
 ];
   
